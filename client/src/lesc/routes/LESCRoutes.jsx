@@ -11,6 +11,7 @@ import DeflectionForm from '../components/DeflectionForm';
 import PropertyForm from '../components/PropertyForm';
 import NarcoticsForm from '../components/NarcoticsForm';
 import TestFormPreview from '@/forms/TestFormPreview';
+import Form849BPreview from '@/forms/Form849BPreview';
 
 function LESCRoutes () {
   const { user } = useAuthContext();
@@ -27,6 +28,7 @@ function LESCRoutes () {
       <Route path='incident' element={<IncidentForm />} />
       <Route path='custody' element={<Custody />} />
       <Route path='forms/test' element={<TestFormPreview />} />
+      <Route path='forms/849b/:deflectionId' element={<Form849BPreview />} />
       <Route path='' element={<Navigate to={defaultPath} />} />
     </Routes>
   );
