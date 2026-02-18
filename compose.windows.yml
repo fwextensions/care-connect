@@ -1,0 +1,15 @@
+# Windows development override
+#
+# Runs infrastructure services + the Fastify backend inside Docker, while
+# the Vite client runs natively on Windows for fast, OS-level HMR.
+#
+# Usage:
+#   docker compose -f compose.yml -f compose.windows.yml up
+#
+# Then in a separate terminal (native Windows/WSL2 shell):
+#   npm run dev:client
+
+services:
+  server:
+    # Only start the Fastify API server – Vite runs on the host instead.
+    command: bash -l -c "npm install && npm run dev -w server -- --port 3000"
