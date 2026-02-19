@@ -36,9 +36,12 @@ services:
       - 3000:3000 # fastify
       - 5555:5555 # prisma studio
     depends_on:
-      - db
-      - mail
-      - storage
+      db:
+        condition: service_healthy
+      mail:
+        condition: service_started
+      storage:
+        condition: service_started
     volumes:
       - .:/opt/node/app
       - /opt/node/app/node_modules

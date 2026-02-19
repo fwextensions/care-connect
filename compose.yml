@@ -10,6 +10,11 @@ services:
       - ./data/postgres:/var/lib/postgresql/data
     networks:
       - care-connect
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
   mail:
     image: dockage/mailcatcher:0.9.0
     ports:
