@@ -3,8 +3,10 @@
 # Runs infrastructure services + the Fastify backend inside Docker, while
 # the Vite client runs natively on Windows for fast, OS-level HMR.
 #
-# Usage:
-#   docker compose -f compose.yml -f compose.windows.yml up
+# Must be layered on top of compose.override.yml (which provides the build
+# context, environment variables, and volumes for the server service):
+#
+#   docker compose -f compose.yml -f compose.override.yml -f compose.windows.yml up
 #
 # Then in a separate terminal (native Windows/WSL2 shell):
 #   npm run dev:client
