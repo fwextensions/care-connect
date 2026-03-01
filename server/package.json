@@ -31,7 +31,6 @@
     "@fastify/swagger": "^9.5.1",
     "@fastify/url-data": "^6.0.3",
     "@prisma/client": "^6.16.2",
-    "@react-pdf/renderer": "^4.3.2",
     "@scalar/fastify-api-reference": "^1.35.7",
     "@turf/boolean-point-in-polygon": "^7.2.0",
     "@turf/helpers": "^7.2.0",
@@ -51,6 +50,9 @@
     "mime-types": "^3.0.1",
     "nodemailer": "^7.0.6",
     "pm2": "^6.0.11",
+    "puppeteer-core": "^24.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "wellknown": "^0.5.0",
     "zod": "^4.1.11",
     "zod-openapi": "^5.4.1"
