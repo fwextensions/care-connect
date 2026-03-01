@@ -10,8 +10,10 @@ import seedTitles from './seeds/titles.js';
 import seedUnits from './seeds/units.js';
 import seedFacilityStatusReasons from './seeds/facilityStatusReasons.js';
 import seedDeflectionCancelReasons from './seeds/deflectionCancelReasons.js';
+import seedDeflectionReleaseReasons from './seeds/deflectionReleaseReasons.js';
 import seedDeflectionDetails from './seeds/deflectionDetails.js';
 import seedTestDeflection from './seeds/testDeflection.js';
+import seedTestReleasedDeflection from './seeds/testReleasedDeflection.js';
 
 try {
   await seedAdminUser(prisma);
@@ -24,8 +26,10 @@ try {
   await seedUnits(prisma);
   await seedFacilityStatusReasons(prisma);
   await seedDeflectionCancelReasons(prisma);
+  await seedDeflectionReleaseReasons(prisma);
   await seedDeflectionDetails(prisma);
   await seedTestDeflection(prisma);
+  await seedTestReleasedDeflection(prisma);
 } catch (error) {
   console.error('Error seeding:', error);
   process.exit(1);
