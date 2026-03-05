@@ -34,7 +34,7 @@ function LESCRoutes () {
       <Route path='custody' element={<Custody />} />
       <Route path='care' element={<Care />} />
       <Route path='forms/test' element={<TestFormPreview />} />
-      <Route path='forms/849b/:deflectionId' element={<Form849BPreview />} />
+      <Route path='forms/:formId/:deflectionId' element={<Form849BPreview />} />
       <Route path='forms/preview/:formId/:deflectionId' element={<FormPreview />} />
       <Route path='' element={<Navigate to={defaultPath} />} />
     </Routes>
