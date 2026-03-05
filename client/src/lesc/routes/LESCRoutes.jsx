@@ -13,7 +13,7 @@ import DeflectionForm from '../components/DeflectionForm';
 import PropertyForm from '../components/PropertyForm';
 import NarcoticsForm from '../components/NarcoticsForm';
 import TestFormPreview from '@/forms/TestFormPreview';
-import Form849BPreview from '@/forms/Form849BPreview';
+import FormsPage from '@/forms/FormsPage';
 import FormPreview from '@/forms/FormPreview';
 
 function LESCRoutes () {
@@ -34,7 +34,7 @@ function LESCRoutes () {
       <Route path='custody' element={<Custody />} />
       <Route path='care' element={<Care />} />
       <Route path='forms/test' element={<TestFormPreview />} />
-      <Route path='forms/:formId/:deflectionId' element={<Form849BPreview />} />
+      <Route path='forms/:formId/:deflectionId' element={<FormsPage />} />
       <Route path='forms/preview/:formId/:deflectionId' element={<FormPreview />} />
       <Route path='' element={<Navigate to={defaultPath} />} />
     </Routes>
