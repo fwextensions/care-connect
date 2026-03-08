@@ -13,7 +13,6 @@ import LockedQRCode from '@/components/LockedQRCode';
 import { useToast } from '@/components/ToastContext';
 import { useFacilityContext } from '@/FacilityContext';
 import { formatAddress, formatDateTime } from '@/utils/format';
-import { generateCertificateOfReleasePDF } from '@/utils/pdfGenerator';
 
 const RELEASABLE_STATUSES = ['AWAITING_INTAKE', 'READY_FOR_INTAKE', 'ADMITTED', 'IN_CHAIR'];
 
@@ -86,19 +85,7 @@ function CustodyDetailContent ({ deflection, backTo = '/custody' }) {
   });
 
   function open849bPdf () {
-    const holdData = {
-      id: String(deflection.id),
-      client: deflection.subject,
-      incident: {
-        dateTimeArrested: incident?.arrestedAt ?? null,
-      },
-      createdAt: deflection?.createdAt,
-      transferredAt: deflection?.releasedAt ?? null,
-      createdBy: deflection?.createdBy ?? null,
-    };
-    const doc = generateCertificateOfReleasePDF(holdData);
-    const blobUrl = doc.output('bloburl');
-    window.open(blobUrl, '_blank');
+    window.open(`/api/forms/849b/pdf/${deflection.id}`, '_blank');
   }
 
   function onReleaseNarrativeButtonClick () {
